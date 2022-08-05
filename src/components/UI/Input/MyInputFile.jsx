@@ -7,7 +7,7 @@ import {ReactComponent as Plus} from "../../../assets/plus.svg";
 
 
 const MyInputFile = ({name, title}) => {
-    const { register } = useFormContext();
+
     return (
         <div className="file form__row">
             <div className="file__title form__title">{title}</div>
@@ -15,7 +15,6 @@ const MyInputFile = ({name, title}) => {
                 <Plus/>
             </label>
             <input
-                {...register(name)}
                 type="file"
                 accept="image/*"
                 className="file__input form__input"
