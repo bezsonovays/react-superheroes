@@ -1,0 +1,25 @@
+.form__row-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0 0 0;
+}
+
+.form__button {
+    background: #FEC400;
+    color: #FFFFFF;
+    font-weight: 700;
+    min-width: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.form__button:hover {
+    box-shadow: 0.2rem .2rem 0.5rem rgba(0,0,0,.10)!important;
+}

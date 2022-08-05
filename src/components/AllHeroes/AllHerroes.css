@@ -1,0 +1,30 @@
+.list {
+    padding: 32px;
+    background-color: #FFFFFF;
+    border: 1px solid #DFE0EB;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.list__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.list__title {
+    font-weight: 700;
+    font-size: 19px;
+    letter-spacing: 0.4px;
+}
+
+.list__column-title {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: #9FA2B4;
+}

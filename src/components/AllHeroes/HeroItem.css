@@ -1,0 +1,27 @@
+.superhero {
+    border-top: 1px solid #DFE0EB;
+    border-radius: 8px;
+    padding: 16px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.superhero__cell {
+    padding: 0 10px;
+}
+.superhero__icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.superhero__nickname {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.superhero:hover {
+    background-color: rgba(55, 81, 255, 0.04);
+}
