@@ -1,0 +1,9 @@
+.icon__button {
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+    cursor: pointer;
+}

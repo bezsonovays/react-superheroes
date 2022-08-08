@@ -1,19 +1,17 @@
 import React, {useState} from 'react';
+//router
+import {Link, Outlet} from "react-router-dom";
 //components
-import MyModal from "../components/UI/Modal/MyModal";
-import AddHeroForm from "../components/AddHeroForm/AddHeroForm";
-import MyButton from "../components/UI/Button/MyButton";
 import AllHeroes from "../components/AllHeroes/AllHeroes";
+import MyButton from "../components/UI/Button/MyButton";
+import MyModal from "../components/UI/Modal/MyModal";
 
 const Home = () => {
     const [modal, setModal] = useState(false);
-
     return (
         <div className="container">
-            <MyButton onClick={() => {setModal(true)}}>Create Superhero</MyButton>
-            <MyModal visible={modal} setVisible={setModal}>
-                <AddHeroForm />
-            </MyModal>
+            <MyButton ><Link to={'form'}>Create Superhero</Link></MyButton>
+            <Outlet/>
             <AllHeroes/>
         </div>
     );

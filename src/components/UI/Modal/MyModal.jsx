@@ -1,15 +1,17 @@
 import React from 'react';
+
+import {useNavigate} from "react-router-dom";
 import './MyModal.css';
 
 const MyModal = ({children, visible, setVisible}) => {
+    const navigate = useNavigate();
 
-    const rootClasses = ['modal'];
-    if(visible) {
-        rootClasses.push('active');
+    const closeWindow = () => {
+        setVisible(false);
+        navigate({pathname: '/'})
     }
-
     return (
-        <div className={rootClasses.join(' ')} onClick={() => {setVisible(false)}}>
+        <div className="modal active" onClick={closeWindow}>
             <div className="modal__content" onClick={(e) => e.stopPropagation()}>{children}</div>
         </div>
     )

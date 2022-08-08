@@ -2,7 +2,8 @@
     background: #FEC400;
     color: #ffffff;
     border-radius: 5px;
-    padding: 10px 30px;
+    width: 214px;
+    height: 34px;
     font-size: 14px;
     line-height: 1;
     text-decoration: none;
@@ -13,6 +14,15 @@
     cursor: pointer;
     border: none;
     min-width: 160px;
+}
+
+.myBtn a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
 }
 .myBtn__wrapper {
     width: 100%;

@@ -3,9 +3,16 @@
     border-radius: 8px;
     padding: 16px 0;
     display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.superhero__block {
+    display: flex;
     gap: 10px;
     align-items: center;
-    cursor: pointer;
 }
 .superhero__cell {
     padding: 0 10px;
@@ -20,8 +27,16 @@
 .superhero__nickname {
     font-size: 16px;
     font-weight: 700;
+    min-width: 300px;
 }
 
 .superhero:hover {
     background-color: rgba(55, 81, 255, 0.04);
+}
+
+
+@media screen and (max-width: 600px) {
+    .superhero__nickname {
+        min-width: 100%;
+    }
 }
