@@ -7,7 +7,7 @@ import HeroItem from "./HeroItem";
 //hooks
 import {useFetching} from "../../hooks/useFetching";
 //helpers
-import PostService from "../../http/index";
+import {heroService} from "../../services";
 //css
 import './AllHerroes.css';
 import './HeroItem.css';
@@ -17,8 +17,8 @@ const AllHeroes = () => {
     const {state: hero} = useLocation();
     const [superheroes, setSuperheroes] = useState([]);
     const [fetchHeroes, isHeroesLoading, heroesError] = useFetching( async () => {
-        const responce = await PostService.getData();
-        setSuperheroes(responce)
+        const responce = await heroService.getAll();
+        setSuperheroes(responce.data )
     });
 
     useEffect( () => {
@@ -26,7 +26,7 @@ const AllHeroes = () => {
     }, [hero]);
 
     const deleteHeroById = (id) => {
-        PostService.deleteByID(id).then((res)=>{
+        heroService.deleteByID(id).then((res)=>{
             if (res.status === 204) {
                 setSuperheroes(superheroes.filter((hero) => hero._id !== id));
             }

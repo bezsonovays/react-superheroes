@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 //router
 import {useLocation, useNavigate} from "react-router-dom";
 //helpers
-import PostService from "../../http";
+import {heroService} from "../../services";
 //components
 import FormButton from "../UI/Button/FormButton";
 import IconButton from "../UI/Button/IconButton";
@@ -28,7 +28,7 @@ const AddHeroForm = () => {
     } = useForm();
 
     const getHeroByID = async () => {
-        const responce = await PostService.getByID(id);
+        const responce = await heroService.getByID(id);
         setValue('nickname', responce.nickname);
         setValue('catch_phrase', responce.catch_phrase)
         setValue('origin_description', responce.origin_description)
@@ -51,13 +51,13 @@ const AddHeroForm = () => {
         }
 
         if (id) {
-            PostService.updateData(id, formData)
+            heroService.updateById(id, formData)
                 .then(({status, data})=>{
                 console.log(status, data)
                 status === 201 && navigate({pathname: '/', state: {data}})
             })
         } else {
-            PostService.createData(formData).then(({data, status})=>{
+            heroService.createHero(formData).then(({data, status})=>{
                 status === 201 && navigate({pathname: '/', state: {data}})
             })
         }

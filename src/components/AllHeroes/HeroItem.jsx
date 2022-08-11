@@ -10,30 +10,32 @@ import {ReactComponent as Edit} from "../../assets/edit.svg";
 
 
 const HeroItem = ({superhero, deleteHeroById}) => {
+    const {image, nickname, _id} = superhero;
     const navigate = useNavigate();
+    const goHeroIdPage = () => {
+        navigate({pathname: `/heroes/${superhero._id}`, state: { superhero }});
+    }
 
     return (
-            <article className="superhero"
-                     // onClick={() => navigate({pathname: `${superhero._id}`, state: { superhero }})}
-                >
+            <article className="superhero"  onClick={goHeroIdPage} >
                 <div className="superhero__block">
                     <div className="superhero__cell">
-                        <img  className="superhero__icon" src={superhero.image} alt={superhero.nickname} />
+                        <img  className="superhero__icon" src={image} alt={nickname} />
                     </div>
                     <div className="superhero__cell">
-                        <h4 className="superhero__nickname">{superhero.nickname}</h4>
+                        <h4 className="superhero__nickname">{nickname}</h4>
                     </div>
                 </div>
-                <div className="superhero__block">
-                    <button onClick={() => deleteHeroById(superhero._id)}>
+                <div className="superhero__block buttons">
+                    <button onClick={(e) => {
+                         deleteHeroById(_id)}}>
                         <IconButton background="rgba(241, 43, 44, .3)"><Delete/></IconButton>
                     </button>
-                    <button><Link to={'form'} state={ superhero._id }>
+                    <button><Link to={'form'} state={_id }>
                         <IconButton background="rgba(41, 204, 151, .3)"><Edit/></IconButton>
                     </Link></button>
                 </div>
             </article>
-
     );
 };
 
